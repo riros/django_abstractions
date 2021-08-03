@@ -1,2 +1,2 @@
 # django-abstractions
-Abstractions for django. bicycles out of the box.
+Bicycles out of the box.
