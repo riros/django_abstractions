@@ -8,6 +8,8 @@ from django.utils import timezone
 from django.utils.translation import gettext as _
 from uuslug import uuslug
 
+from django_abstractions.manager_abstractions import BaseManager, AllManager
+
 log = logging.getLogger(__name__)
 
 
@@ -22,6 +24,9 @@ class AbstractTrackTimeModel(Model):
     created_at = DateTimeField(_("Created date"), auto_now_add=True, editable=False)
     updated_at = DateTimeField(_("Updated date"), auto_now=True, editable=False)
     deleted_at = DateTimeField(_("Deleted date"), default=False, editable=False)
+
+    objects = BaseManager()
+    objects_all = AllManager()
 
     class Meta:
         abstract = True
