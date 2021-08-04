@@ -3,6 +3,4 @@ requires = [
     "setuptools>=57.4",
     "wheel",
     "cmake>=3.11.0,<4.0.0",
-    'django-crum',
-
 ]
