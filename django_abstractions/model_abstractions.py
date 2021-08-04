@@ -27,7 +27,8 @@ class AbstractTrackTimeModel(Model):
         abstract = True
         indexes = (
             BrinIndex(fields=['-created_at']),
-            BTreeIndex(fields=['-updated_at'])
+            BTreeIndex(fields=['-updated_at']),
+            BrinIndex(fields=['deleted_at'])
         )
 
     def delete(self, using=None, keep_parents=False):
