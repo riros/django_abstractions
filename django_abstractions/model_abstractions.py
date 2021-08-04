@@ -26,7 +26,7 @@ class AbstractTrackTimeModel(Model):
     class Meta:
         abstract = True
         indexes = (
-            BrinIndex(fields=['-created_at']),
+            BrinIndex(fields=['created_at']),
             BTreeIndex(fields=['-updated_at']),
             BrinIndex(fields=['deleted_at'])
         )
