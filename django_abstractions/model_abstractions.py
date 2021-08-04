@@ -19,7 +19,7 @@ class AbstractUUIDPKModel(Model):
 
 
 class AbstractTrackTimeModel(Model):
-    created_at = DateTimeField(_("Created date"), auto_now_add=True, editable=False, default=timezone.now)
+    created_at = DateTimeField(_("Created date"), auto_now_add=True, editable=False)
     updated_at = DateTimeField(_("Updated date"), auto_now=True, editable=False)
     deleted_at = DateTimeField(_("Deleted date"), default=False, editable=False)
 
