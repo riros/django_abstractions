@@ -39,54 +39,6 @@ MIDDLEWARE = [
 
 LOG_PATH = os.path.join(BASE_DIR, 'logs')
 LOG_FILE_PATH = os.path.join(LOG_PATH, "test.log")
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-    },
-    'formatters': {
-        'for_testing': {
-            'format': '%(message)s'
-        },
-    },
-    'handlers': {
-        'logfile': {
-            'level': 'DEBUG' if DEBUG else 'INFO',
-            'class': 'logging.handlers.WatchedFileHandler',
-            'formatter': 'for_testing',
-            'filename': LOG_FILE_PATH,  # noqa
-        },
-
-    },
-
-    'loggers': {
-        PROJECT_NAME: {
-            'handlers': ['logfile'],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-        'django': {
-            'handlers': [],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-        'django_auth_ldap': {
-            'handlers': [],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-        'http.client': {
-            'handlers': [],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-        'django.utils.autoreload': {
-            'handlers': [],
-            'level': 'WARNING',
-            'propagate': False,
-        }
-    }
-}
 
 ROOT_URLCONF = 'example_project.urls'
 
